@@ -28,7 +28,6 @@ function populateProductDetailsArray (barCodes){
         [0];
         let productCount = barCodes
         .filter(input=> input === uniqueBarCode).length;
-        console.log(barCodes);
         let subtotal = productCount * product.price;
         product.subTotal= subtotal;
         product.count= productCount;
@@ -37,6 +36,11 @@ function populateProductDetailsArray (barCodes){
 
     return productList;
 };
+
+function printReceipt (barCodes){
+   return 'Test';
+};
+
 module.exports =  {
     getUniqueBarCodes : getUniqueBarCodes ,
     populateProductDetailsArray : populateProductDetailsArray

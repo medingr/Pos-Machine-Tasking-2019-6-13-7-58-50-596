@@ -1,27 +1,9 @@
 const functionMethods = require('../main');
 
-     
-    // it('should print correct text', () => {
-
-    //     let actualText = printInventory(inputs);
-
-    //     let expectText =
-    //         'Receipts\n' +
-    //         '------------------------------------------------------------\n' +
-    //         'Coca Cola                       3          1\n' +
-    //         'Pepsi-Cola                      5          2\n' +
-    //         'Dr Pepper                       7          1\n' +
-    //         '------------------------------------------------------------\n' +
-    //         'Price: 20\n';
-
-    //     expect(actualText).toBe(expectText);
-    // });
-
     it('should get Unique BarCodes', () => {
         const barCodes = ['0001', '0003', '0005', '0003'];
         const uniqueBarcodes = ['0001', '0003', '0005'];
         const result = functionMethods.getUniqueBarCodes(barCodes);
-        console.log(result);
         expect(result).toStrictEqual(uniqueBarcodes);
     });
 
@@ -49,4 +31,20 @@ const functionMethods = require('../main');
            ];
 	    const result = functionMethods.populateProductDetailsArray(barCodes);
         expect(result).toStrictEqual(productDetails);
+    });
+
+     it('should print Receipt', () => {
+
+        let actualText = printReceipt(barCodes);
+
+        let expectText =
+            'Receipts\n' +
+            '------------------------------------------------------------\n' +
+            'Coca Cola                       3          1\n' +
+            'Pepsi-Cola                      5          2\n' +
+            'Dr Pepper                       7          1\n' +
+            '------------------------------------------------------------\n' +
+            'Price: 20\n';
+
+        expect(actualText).toBe(expectText);
     });
